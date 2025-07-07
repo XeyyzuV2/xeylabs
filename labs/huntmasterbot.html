@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project: HuntMasterBot - XeyLabs</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body class="bg-white text-gray-900 dark:bg-black dark:text-gray-100 antialiased transition-colors duration-300">
+
+    <!-- Header -->
+    <header class="border-b border-gray-200 dark:border-gray-800 sticky top-0 z-50 bg-white dark:bg-black bg-opacity-80 dark:bg-opacity-80 backdrop-blur-md transition-colors duration-300">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <a href="../index.html" class="text-2xl font-bold text-gray-900 dark:text-white hover:text-gray-700 dark:hover:text-gray-300 transition-colors">XeyLabs</a>
+                </div>
+                <nav class="hidden md:flex space-x-4">
+                    <a href="../index.html" class="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Home</a>
+                    <a href="../blog.html" class="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Blog</a>
+                    <a href="../changelog.html" class="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Changelog</a>
+                    <a href="../docs.html" class="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Documentation</a>
+                    <a href="../labs.html" class="text-purple-600 dark:text-purple-400 hover:text-purple-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Labs</a>
+                    <a href="../support.html" class="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Support</a>
+                    <a href="../roadmap.html" class="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Roadmap</a>
+                </nav>
+                <!-- Theme Toggle Button -->
+                <button id="theme-toggle" class="ml-4 p-2 rounded-md text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-500 transition-colors duration-300">
+                    <svg id="theme-toggle-dark-icon" class="hidden h-5 w-5" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+                    <svg id="theme-toggle-light-icon" class="hidden h-5 w-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm-.707 7.072l.707-.707a1 1 0 10-1.414-1.414l-.707.707a1 1 0 001.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"></path></svg>
+                </button>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-500">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="md:hidden hidden border-t border-gray-200 dark:border-gray-800 bg-white dark:bg-black transition-colors duration-300">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="../index.html" class="text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-white block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                <a href="../blog.html" class="text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-white block px-3 py-2 rounded-md text-base font-medium">Blog</a>
+                <a href="../changelog.html" class="text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-white block px-3 py-2 rounded-md text-base font-medium">Changelog</a>
+                <a href="../docs.html" class="text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-white block px-3 py-2 rounded-md text-base font-medium">Documentation</a>
+                <a href="../labs.html" class="text-purple-600 dark:text-purple-400 bg-gray-100 dark:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Labs</a>
+                <a href="../support.html" class="text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-white block px-3 py-2 rounded-md text-base font-medium">Support</a>
+                <a href="../roadmap.html" class="text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-white block px-3 py-2 rounded-md text-base font-medium">Roadmap</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area - Project Detail Page -->
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <article class="max-w-3xl mx-auto">
+            <header class="mb-8">
+                 <div class="flex justify-between items-center">
+                    <h1 class="text-4xl sm:text-5xl font-extrabold text-gray-900 dark:text-white leading-tight">HuntMasterBot</h1>
+                    <span class="text-sm font-semibold px-3 py-1 rounded-full bg-yellow-100 text-yellow-800 dark:bg-yellow-700 dark:text-yellow-200">Beta</span>
+                </div>
+                <p class="mt-2 text-xl text-gray-600 dark:text-gray-400">Intelligent Telegram bot for job seekers.</p>
+                 <div class="mt-6">
+                    <a href="../labs.html" class="text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300 transition-colors">&larr; Back to Labs</a>
+                </div>
+            </header>
+
+            <figure class="my-8">
+                <img src="https://via.placeholder.com/800x400/34D399/FFFFFF?text=HuntMasterBot+Banner" alt="HuntMasterBot Project Banner" class="w-full h-auto rounded-lg shadow-md">
+            </figure>
+
+            <div class="prose dark:prose-invert lg:prose-xl max-w-none text-gray-700 dark:text-gray-300">
+                <p><strong>HuntMasterBot</strong> is a Telegram bot designed to assist job seekers by aggregating job listings from various online platforms. It uses natural language processing to understand user preferences and deliver personalized job alerts.</p>
+
+                <h2 class="text-2xl font-bold text-gray-900 dark:text-white mt-8 mb-4">Key Features</h2>
+                <ul>
+                    <li>Aggregates job listings from multiple sources (e.g., LinkedIn, Indeed, company career pages - conceptual).</li>
+                    <li>User-configurable job preferences (keywords, location, experience level).</li>
+                    <li>Personalized real-time alerts for new job postings.</li>
+                    <li>NLP-powered query understanding for ad-hoc job searches via chat.</li>
+                    <li>Subscription management for daily/weekly digests.</li>
+                </ul>
+
+                <h2 class="text-2xl font-bold text-gray-900 dark:text-white mt-8 mb-4">Current Status: Beta</h2>
+                <p>HuntMasterBot is currently in Beta testing. We are focusing on:</p>
+                <ul>
+                    <li>Expanding the number of supported job platforms.</li>
+                    <li>Improving the accuracy of the NLP model for intent recognition.</li>
+                    <li>Refining the alert system and user preference management.</li>
+                    <li>Gathering user feedback to enhance usability.</li>
+                </ul>
+                <p>Interested in joining the Beta program? Contact us!</p>
+
+                <h2 class="text-2xl font-bold text-gray-900 dark:text-white mt-8 mb-4">Technologies Used</h2>
+                <ul class="flex flex-wrap gap-2">
+                    <li class="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-3 py-1 rounded-full text-sm">Python</li>
+                    <li class="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-3 py-1 rounded-full text-sm">Telegram Bot API</li>
+                    <li class="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-3 py-1 rounded-full text-sm">NLTK / spaCy (for NLP)</li>
+                    <li class="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-3 py-1 rounded-full text-sm">MongoDB (for user data)</li>
+                </ul>
+
+                <h2 class="text-2xl font-bold text-gray-900 dark:text-white mt-8 mb-4">Roadmap</h2>
+                <p>(Placeholder for a more detailed roadmap section specific to this project)</p>
+                <ul>
+                    <li><strong>Currently:</strong> Ongoing Beta testing and feature refinement.</li>
+                    <li><strong>Next:</strong> Integration with more job boards, advanced filtering options.</li>
+                    <li><strong>Future:</strong> AI-powered resume matching, interview scheduling assistance (conceptual).</li>
+                </ul>
+
+                <div class="mt-12 text-center">
+                     <a href="#" class="bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-lg text-lg transition-transform transform hover:scale-105 inline-block dark:bg-green-600 dark:hover:bg-green-700">
+                        Try HuntMasterBot on Telegram (Placeholder)
+                    </a>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-200 dark:border-gray-800 mt-20 transition-colors duration-300">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center text-gray-600 dark:text-gray-500">
+            <p>&copy; 2024 XeyLabs. Built with Tailwind CSS. Inspired by Next.js.</p>
+            <p>Crafted with ❤️ by Xey.</p>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>

@@ -1,39 +1,92 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 
+/* Base body styles - primarily font */
 body {
     font-family: 'Inter', sans-serif;
-    /* Apply base background and text colors via Tailwind in HTML for better control */
 }
 
-/* Additional global styles or overrides can go here if necessary, */
-/* but the goal is to use Tailwind utilities as much as possible. */
+/*
+  Tailwind's 'dark' variant will be used for most theme changes.
+  The 'dark' class will be applied to the <html> element by JavaScript.
+  Example: <html class="dark">
 
-/* Example: Custom scrollbar (optional, for aesthetics) */
-/* This is more advanced and might not be needed for a simple site */
-/* ::-webkit-scrollbar {
-    width: 8px;
-}
+  In Tailwind, you can then use classes like:
+  bg-white dark:bg-black
+  text-black dark:text-white
+  border-gray-200 dark:border-gray-800
 
-::-webkit-scrollbar-track {
-    background: #1f2937;
-}
+  This CSS file is for styles that are hard to achieve with Tailwind utilities directly
+  or for very specific overrides if necessary.
+*/
 
-::-webkit-scrollbar-thumb {
-    background: #4b5563;
-    border-radius: 4px;
-}
+/* Light Theme Base (when <html> does NOT have .dark) */
+/* Tailwind handles this by default if you use classes like bg-white text-gray-900 etc. */
+/* You might add specific overrides here if needed for complex components not easily handled by Tailwind's dark variant. */
 
-::-webkit-scrollbar-thumb:hover {
-    background: #6b7280;
+/* Example of a very specific override for light theme if Tailwind's dark variant isn't enough for a component */
+/* .my-custom-component {
+    background-color: #f0f0f0;
+    color: #333;
 } */
 
-/* Ensure links in the main content have a distinct style if not covered by contextual Tailwind classes */
-main a {
-    /* color: #9333ea; /* Example: purple-600 */
-    /* text-decoration: underline; */
-    /* Consider using Tailwind classes directly on <a> tags instead for consistency */
+/* Dark Theme Overrides (applied when <html> has .dark) */
+/* These are only needed if Tailwind's `dark:` variants are insufficient for some elements. */
+/* .dark .my-custom-component {
+    background-color: #333;
+    color: #f0f0f0;
+} */
+
+
+/* Default styles for prose (rich text content like blog posts, docs) for light mode */
+.prose {
+    /* Tailwind's typography plugin default is light-themed */
 }
 
+/* Invert prose for dark mode - Tailwind typography plugin's `prose-invert` class handles this */
+/* Make sure `prose-invert` is applied along with `prose` on elements when in dark mode, */
+/* or that the container for prose gets the `dark` class and prose-invert is used within it. */
+/* The current setup in HTML files (e.g., docs.html, blog posts) uses `prose prose-invert` directly,
+   which assumes a dark background. We need to make this conditional.
+   One way is to have `prose` for light and `prose prose-invert` for dark.
+   This will be handled by adding/removing `prose-invert` dynamically or by Tailwind's dark variant if the plugin supports it well.
+   For now, existing pages use `prose-invert` assuming dark theme. This will need adjustment.
+*/
+
+/* General link styling for light mode, if not covered by Tailwind */
+/* main a {
+    color: #5b21b6; /* Example: violet-700 */
+/* }
 main a:hover {
-    /* color: #7e22ce; /* Example: purple-700 */
+    color: #4c1d95; /* Example: violet-800 */
+/* } */
+
+/* General link styling for dark mode, if not covered by Tailwind */
+/* .dark main a {
+    color: #a78bfa; /* Example: violet-400 */
+/* }
+.dark main a:hover {
+    color: #c4b5fd; /* Example: violet-300 */
+/* } */
+
+/* Sidebar active link in light mode for docs.html */
+.docs-sidebar a.active {
+    /* Default is already set for dark mode in docs.html style block */
+    /* color: #a855f7; border-left-color: #a855f7; */
+}
+.dark .docs-sidebar a.active {
+    color: #a855f7; /* purple-500 */
+    border-left-color: #a855f7; /* purple-500 */
+}
+html:not(.dark) .docs-sidebar a.active {
+    color: #6d28d9; /* purple-700 */
+    border-left-color: #6d28d9; /* purple-700 */
+}
+
+html:not(.dark) .docs-sidebar a {
+    border-left-color: #e5e7eb; /* gray-200 */
+    color: #374151; /* gray-700 */
+}
+html:not(.dark) .docs-sidebar a:hover {
+    color: #6d28d9; /* purple-700 */
+    border-left-color: #6d28d9; /* purple-700 */
 }

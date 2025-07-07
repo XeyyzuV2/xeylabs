@@ -8,30 +8,36 @@
     <link rel="stylesheet" href="style.css">
     <style>
         /* Custom styles for documentation page if needed */
-        .docs-sidebar a.active {
-            color: #a855f7; /* purple-500 */
-            border-left-color: #a855f7; /* purple-500 */
-            font-weight: 600;
-        }
+        /* Default (light mode) is handled by classes in style.css */
+        /* Dark mode specific active link style is also in style.css */
     </style>
 </head>
-<body class="bg-black text-gray-100 antialiased">
+<body class="bg-white text-gray-900 dark:bg-black dark:text-gray-100 antialiased transition-colors duration-300 docs-page-body">
 
     <!-- Header -->
-    <header class="border-b border-gray-800 sticky top-0 z-50 bg-black bg-opacity-80 backdrop-blur-md">
+    <header class="border-b border-gray-200 dark:border-gray-800 sticky top-0 z-50 bg-white dark:bg-black bg-opacity-80 dark:bg-opacity-80 backdrop-blur-md transition-colors duration-300">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
                 <div class="flex items-center">
-                    <a href="index.html" class="text-2xl font-bold text-white hover:text-gray-300 transition-colors">XeyLabs</a>
+                    <a href="index.html" class="text-2xl font-bold text-gray-900 dark:text-white hover:text-gray-700 dark:hover:text-gray-300 transition-colors">XeyLabs</a>
                 </div>
                 <nav class="hidden md:flex space-x-4">
-                    <a href="index.html" class="text-gray-400 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Home</a>
-                    <a href="blog.html" class="text-gray-400 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Blog</a>
-                    <a href="changelog.html" class="text-gray-400 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Changelog</a>
-                    <a href="docs.html" class="text-purple-400 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Documentation</a>
+                    <a href="index.html" class="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Home</a>
+                    <a href="blog.html" class="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Blog</a>
+                    <a href="changelog.html" class="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Changelog</a>
+                    <a href="docs.html" class="text-purple-600 dark:text-purple-400 hover:text-purple-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Documentation</a>
+                    <a href="labs.html" class="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Labs</a>
+                    <a href="support.html" class="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Support</a>
+                    <a href="roadmap.html" class="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Roadmap</a>
+                    <a href="downloads.html" class="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Downloads</a>
                 </nav>
+                <!-- Theme Toggle Button -->
+                <button id="theme-toggle" class="ml-4 p-2 rounded-md text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-500 transition-colors duration-300">
+                    <svg id="theme-toggle-dark-icon" class="hidden h-5 w-5" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+                    <svg id="theme-toggle-light-icon" class="hidden h-5 w-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm-.707 7.072l.707-.707a1 1 0 10-1.414-1.414l-.707.707a1 1 0 001.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"></path></svg>
+                </button>
                 <div class="md:hidden">
-                    <button id="mobile-menu-button" class="text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-500">
+                    <button id="mobile-menu-button" class="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-500">
                         <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
                         </svg>
@@ -39,12 +45,16 @@
                 </div>
             </div>
         </div>
-        <div id="mobile-menu" class="md:hidden hidden border-t border-gray-800">
+        <div id="mobile-menu" class="md:hidden hidden border-t border-gray-200 dark:border-gray-800 bg-white dark:bg-black transition-colors duration-300">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="index.html" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Home</a>
-                <a href="blog.html" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Blog</a>
-                <a href="changelog.html" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Changelog</a>
-                <a href="docs.html" class="text-purple-400 bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Documentation</a>
+                <a href="index.html" class="text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-white block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                <a href="blog.html" class="text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-white block px-3 py-2 rounded-md text-base font-medium">Blog</a>
+                <a href="changelog.html" class="text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-white block px-3 py-2 rounded-md text-base font-medium">Changelog</a>
+                <a href="docs.html" class="text-purple-600 dark:text-purple-400 bg-gray-100 dark:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Documentation</a>
+                <a href="labs.html" class="text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-white block px-3 py-2 rounded-md text-base font-medium">Labs</a>
+                <a href="support.html" class="text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-white block px-3 py-2 rounded-md text-base font-medium">Support</a>
+                <a href="roadmap.html" class="text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-white block px-3 py-2 rounded-md text-base font-medium">Roadmap</a>
+                <a href="downloads.html" class="text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-white block px-3 py-2 rounded-md text-base font-medium">Downloads</a>
             </div>
         </div>
     </header>
@@ -55,21 +65,21 @@
             <!-- Sidebar -->
             <aside id="docs-sidebar" class="w-full lg:w-1/4 lg:pr-8 mb-12 lg:mb-0">
                 <div class="sticky top-24"> <!-- top-16 (header height) + py-8 (main padding) approx -->
-                    <h2 class="text-xl font-semibold text-white mb-4">Documentation</h2>
+                    <h2 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Documentation</h2>
                     <nav class="space-y-2 docs-sidebar">
                         <div>
-                            <h3 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-1">Getting Started</h3>
+                            <h3 class="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-1">Getting Started</h3>
                             <a href="#introduction" class="block py-1 px-2 border-l-2 border-gray-700 text-gray-300 hover:text-purple-400 hover:border-purple-400 transition-colors">Introduction</a>
                             <a href="#setup" class="block py-1 px-2 border-l-2 border-gray-700 text-gray-300 hover:text-purple-400 hover:border-purple-400 transition-colors">Project Setup</a>
                         </div>
                         <div>
-                            <h3 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mt-4 mb-1">Project Alpha</h3>
+                            <h3 class="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mt-4 mb-1">Project Alpha</h3>
                             <a href="#alpha-overview" class="block py-1 px-2 border-l-2 border-gray-700 text-gray-300 hover:text-purple-400 hover:border-purple-400 transition-colors">Overview</a>
                             <a href="#alpha-api" class="block py-1 px-2 border-l-2 border-gray-700 text-gray-300 hover:text-purple-400 hover:border-purple-400 transition-colors">API Reference</a>
                             <a href="#alpha-examples" class="block py-1 px-2 border-l-2 border-gray-700 text-gray-300 hover:text-purple-400 hover:border-purple-400 transition-colors">Examples</a>
                         </div>
                         <div>
-                            <h3 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mt-4 mb-1">AI Companion</h3>
+                            <h3 class="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mt-4 mb-1">AI Companion</h3>
                             <a href="#ai-introduction" class="block py-1 px-2 border-l-2 border-gray-700 text-gray-300 hover:text-purple-400 hover:border-purple-400 transition-colors">Introduction</a>
                             <a href="#ai-features" class="block py-1 px-2 border-l-2 border-gray-700 text-gray-300 hover:text-purple-400 hover:border-purple-400 transition-colors">Features</a>
                         </div>
@@ -79,35 +89,35 @@
             </aside>
 
             <!-- Content Area -->
-            <article class="w-full lg:w-3/4 prose prose-invert max-w-none text-gray-300 lg:pl-8">
+            <article class="w-full lg:w-3/4 prose dark:prose-invert max-w-none text-gray-700 dark:text-gray-300 lg:pl-8">
                 <section id="introduction" class="mb-16 scroll-mt-24">
-                    <h1 class="text-4xl font-extrabold text-white border-b border-gray-700 pb-4 mb-6">Introduction</h1>
+                    <h1 class="text-4xl font-extrabold text-gray-900 dark:text-white border-b border-gray-300 dark:border-gray-700 pb-4 mb-6">Introduction</h1>
                     <p>Welcome to the XeyLabs documentation. This space provides detailed information about the various projects, experiments, and tools developed under the XeyLabs umbrella. Whether you're looking to understand a specific project, contribute, or simply learn, these documents aim to be a comprehensive resource.</p>
                     <p>Our documentation is organized by project. Use the sidebar to navigate through different sections and topics.</p>
                 </section>
 
                 <section id="setup" class="mb-16 scroll-mt-24">
-                    <h2 class="text-3xl font-bold text-white border-b border-gray-700 pb-3 mb-6">Project Setup</h2>
+                    <h2 class="text-3xl font-bold text-gray-900 dark:text-white border-b border-gray-300 dark:border-gray-700 pb-3 mb-6">Project Setup</h2>
                     <p>General guidelines for setting up and running projects from XeyLabs.</p>
-                    <h3 class="text-xl font-semibold text-purple-400 mt-6 mb-3">Prerequisites</h3>
+                    <h3 class="text-xl font-semibold text-purple-600 dark:text-purple-400 mt-6 mb-3">Prerequisites</h3>
                     <ul class="list-disc pl-5 space-y-1">
                         <li>Git</li>
                         <li>Node.js (version specified per project)</li>
                         <li>A code editor (e.g., VS Code)</li>
                     </ul>
-                    <h3 class="text-xl font-semibold text-purple-400 mt-6 mb-3">Cloning a Repository</h3>
-                    <pre><code class="language-bash">git clone https://github.com/yourusername/project-name.git
+                    <h3 class="text-xl font-semibold text-purple-600 dark:text-purple-400 mt-6 mb-3">Cloning a Repository</h3>
+                    <pre><code class="language-bash bg-gray-100 dark:bg-gray-800 text-sm p-4 rounded-md overflow-x-auto">git clone https://github.com/yourusername/project-name.git
 cd project-name</code></pre>
-                    <h3 class="text-xl font-semibold text-purple-400 mt-6 mb-3">Installing Dependencies</h3>
+                    <h3 class="text-xl font-semibold text-purple-600 dark:text-purple-400 mt-6 mb-3">Installing Dependencies</h3>
                     <p>Most JavaScript-based projects will use npm or yarn for package management.</p>
-                    <pre><code class="language-bash">npm install
+                    <pre><code class="language-bash bg-gray-100 dark:bg-gray-800 text-sm p-4 rounded-md overflow-x-auto">npm install
 # or
 yarn install</code></pre>
                     <p>Refer to individual project README files for specific setup instructions.</p>
                 </section>
 
                 <section id="alpha-overview" class="mb-16 scroll-mt-24">
-                    <h2 class="text-3xl font-bold text-white border-b border-gray-700 pb-3 mb-6">Project Alpha: Overview</h2>
+                    <h2 class="text-3xl font-bold text-gray-900 dark:text-white border-b border-gray-300 dark:border-gray-700 pb-3 mb-6">Project Alpha: Overview</h2>
                     <p>Project Alpha is an experimental initiative focused on decentralized data storage solutions. It aims to explore novel cryptographic techniques and peer-to-peer networking protocols to create a resilient and secure data persistence layer.</p>
                     <p>Key goals of Project Alpha:</p>
                     <ul class="list-disc pl-5 space-y-1">
@@ -119,31 +129,31 @@ yarn install</code></pre>
                 </section>
 
                 <section id="alpha-api" class="mb-16 scroll-mt-24">
-                    <h2 class="text-3xl font-bold text-white border-b border-gray-700 pb-3 mb-6">Project Alpha: API Reference</h2>
-                    <p class="italic text-gray-500">(Placeholder: Full API documentation will be available here.)</p>
+                    <h2 class="text-3xl font-bold text-gray-900 dark:text-white border-b border-gray-300 dark:border-gray-700 pb-3 mb-6">Project Alpha: API Reference</h2>
+                    <p class="italic text-gray-500 dark:text-gray-500">(Placeholder: Full API documentation will be available here.)</p>
                     <p>The API for Project Alpha is currently under development. This section will provide detailed information on endpoints, request/response formats, and authentication methods once the API is stabilized.</p>
-                     <h3 class="text-xl font-semibold text-purple-400 mt-6 mb-3">Core Endpoints (Tentative)</h3>
+                     <h3 class="text-xl font-semibold text-purple-600 dark:text-purple-400 mt-6 mb-3">Core Endpoints (Tentative)</h3>
                     <ul class="list-disc pl-5 space-y-1">
-                        <li><code>POST /data</code>: Store new data.</li>
-                        <li><code>GET /data/{id}</code>: Retrieve data by ID.</li>
-                        <li><code>DELETE /data/{id}</code>: Delete data by ID.</li>
+                        <li><code class="bg-gray-100 dark:bg-gray-700 p-1 rounded text-sm">POST /data</code>: Store new data.</li>
+                        <li><code class="bg-gray-100 dark:bg-gray-700 p-1 rounded text-sm">GET /data/{id}</code>: Retrieve data by ID.</li>
+                        <li><code class="bg-gray-100 dark:bg-gray-700 p-1 rounded text-sm">DELETE /data/{id}</code>: Delete data by ID.</li>
                     </ul>
                 </section>
 
                 <section id="alpha-examples" class="mb-16 scroll-mt-24">
-                     <h2 class="text-3xl font-bold text-white border-b border-gray-700 pb-3 mb-6">Project Alpha: Examples</h2>
-                     <p class="italic text-gray-500">(Placeholder: Code examples will be added here.)</p>
+                     <h2 class="text-3xl font-bold text-gray-900 dark:text-white border-b border-gray-300 dark:border-gray-700 pb-3 mb-6">Project Alpha: Examples</h2>
+                     <p class="italic text-gray-500 dark:text-gray-500">(Placeholder: Code examples will be added here.)</p>
                      <p>This section will feature practical code examples demonstrating how to interact with Project Alpha using various programming languages.</p>
                 </section>
 
                 <section id="ai-introduction" class="mb-16 scroll-mt-24">
-                    <h2 class="text-3xl font-bold text-white border-b border-gray-700 pb-3 mb-6">AI Companion: Introduction</h2>
+                    <h2 class="text-3xl font-bold text-gray-900 dark:text-white border-b border-gray-300 dark:border-gray-700 pb-3 mb-6">AI Companion: Introduction</h2>
                     <p>The AI Companion project is focused on developing a personalized AI assistant. This project explores advancements in natural language processing (NLP), machine learning, and user interaction design to create an intuitive and helpful AI partner.</p>
                 </section>
 
                 <section id="ai-features" class="mb-16 scroll-mt-24">
-                     <h2 class="text-3xl font-bold text-white border-b border-gray-700 pb-3 mb-6">AI Companion: Features</h2>
-                     <p class="italic text-gray-500">(Placeholder: Detailed feature list will be documented here.)</p>
+                     <h2 class="text-3xl font-bold text-gray-900 dark:text-white border-b border-gray-300 dark:border-gray-700 pb-3 mb-6">AI Companion: Features</h2>
+                     <p class="italic text-gray-500 dark:text-gray-500">(Placeholder: Detailed feature list will be documented here.)</p>
                      <ul class="list-disc pl-5 space-y-1">
                         <li>Conversational interface.</li>
                         <li>Task automation capabilities.</li>
@@ -157,8 +167,8 @@ yarn install</code></pre>
     </main>
 
     <!-- Footer -->
-    <footer class="border-t border-gray-800 mt-20">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center text-gray-500">
+    <footer class="border-t border-gray-200 dark:border-gray-800 mt-20 transition-colors duration-300">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center text-gray-600 dark:text-gray-500">
             <p>&copy; 2024 XeyLabs. Built with Tailwind CSS. Inspired by Next.js.</p>
             <p>Crafted with ❤️ by Xey.</p>
         </div>
@@ -170,13 +180,15 @@ yarn install</code></pre>
         document.addEventListener('DOMContentLoaded', () => {
             const sidebarLinks = document.querySelectorAll('#docs-sidebar nav a');
             const sections = document.querySelectorAll('main article section');
+            const header = document.querySelector('header'); // Cache header element
 
             // Function to update active link
             const updateActiveLink = () => {
                 let currentSectionId = '';
+                const headerHeight = header ? header.offsetHeight : 0;
                 sections.forEach(section => {
-                    const sectionTop = section.offsetTop - (document.querySelector('header').offsetHeight + 30); // Adjust offset for sticky header
-                    if (window.scrollY >= sectionTop) {
+                    const sectionTop = section.offsetTop - (headerHeight + 30); // Adjust offset for sticky header
+                    if (window.pageYOffset >= sectionTop) {
                         currentSectionId = section.id;
                     }
                 });
@@ -192,29 +204,17 @@ yarn install</code></pre>
             // Smooth scroll for sidebar links
             sidebarLinks.forEach(link => {
                 link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href');
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        const headerOffset = document.querySelector('header').offsetHeight + 24; // Sticky header height + some padding
-                        const elementPosition = targetElement.getBoundingClientRect().top;
-                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-                        window.scrollTo({
-                            top: offsetPosition,
-                            behavior: 'smooth'
-                        });
-                        // Manually update active class on click as scroll event might be delayed
-                        sidebarLinks.forEach(l => l.classList.remove('active'));
-                        this.classList.add('active');
-                    }
+                    // This click is handled by the global script.js smooth scroll,
+                    // but we ensure active class is set immediately.
+                    // The global script.js checks for `docs-page-body` class for its smooth scroll.
+                    sidebarLinks.forEach(l => l.classList.remove('active'));
+                    this.classList.add('active');
                 });
             });
 
-            // Update active link on scroll
+            // Update active link on scroll and load
             window.addEventListener('scroll', updateActiveLink);
-            // Initial update
-            updateActiveLink();
+            updateActiveLink(); // Initial update on load
         });
     </script>
 </body>
