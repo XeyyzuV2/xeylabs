@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Building Scalable Web Applications with Microservices - XeyLabs Blog</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css"> <!-- Note: Path to style.css adjusted -->
+</head>
+<body class="bg-black text-gray-100 antialiased">
+
+    <!-- Header -->
+    <header class="border-b border-gray-800 sticky top-0 z-50 bg-black bg-opacity-80 backdrop-blur-md">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <a href="../index.html" class="text-2xl font-bold text-white hover:text-gray-300 transition-colors">XeyLabs</a>
+                </div>
+                <nav class="hidden md:flex space-x-4">
+                    <a href="../index.html" class="text-gray-400 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Home</a>
+                    <a href="../blog.html" class="text-purple-400 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Blog</a>
+                    <a href="../changelog.html" class="text-gray-400 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Changelog</a>
+                    <a href="../docs.html" class="text-gray-400 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Documentation</a>
+                </nav>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-500">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="md:hidden hidden border-t border-gray-800">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="../index.html" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                <a href="../blog.html" class="text-purple-400 bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Blog</a>
+                <a href="../changelog.html" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Changelog</a>
+                <a href="../docs.html" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Documentation</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area - Single Blog Post -->
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <article class="max-w-3xl mx-auto prose prose-invert lg:prose-xl">
+            <header class="mb-8">
+                <h1 class="text-4xl sm:text-5xl font-extrabold text-white leading-tight mb-4">Building Scalable Web Applications with Microservices</h1>
+                <p class="text-gray-400">Published on <time datetime="2024-07-15">July 15, 2024</time> by Xey</p>
+                 <div class="mt-4">
+                    <a href="../blog.html" class="text-purple-400 hover:text-purple-300 transition-colors">&larr; Back to Blog</a>
+                </div>
+            </header>
+
+            <p>This is a placeholder for the full content of the blog post "Building Scalable Web Applications with Microservices".</p>
+            <p>The microservices architectural style is an approach to developing a single application as a suite of small, independently deployable services. Each service runs in its own process and communicates with lightweight mechanisms, often an HTTP resource API.</p>
+
+            <h2 class="text-2xl font-bold text-white mt-8 mb-4">Advantages of Microservices</h2>
+            <ul class="list-disc pl-5 space-y-2">
+                <li><strong>Improved Scalability:</strong> Services can be scaled independently.</li>
+                <li><strong>Technology Diversity:</strong> Different services can be written in different programming languages and use different data storage technologies.</li>
+                <li><strong>Resilience:</strong> Failure in one service is less likely to affect others if designed correctly.</li>
+                <li><strong>Faster Development Cycles:</strong> Smaller, focused teams can work on individual services.</li>
+            </ul>
+
+            <h2 class="text-2xl font-bold text-white mt-8 mb-4">Challenges</h2>
+             <ul class="list-disc pl-5 space-y-2">
+                <li><strong>Increased Complexity:</strong> Managing a distributed system can be complex (deployment, monitoring, inter-service communication).</li>
+                <li><strong>Testing:</strong> End-to-end testing can be more challenging.</li>
+                <li><strong>Data Consistency:</strong> Maintaining data consistency across services requires careful design (e.g., eventual consistency, sagas).</li>
+            </ul>
+
+            <p class="mt-8"><em>(This post would typically dive deeper into each point, discuss communication patterns, service discovery, API gateways, and provide some example scenarios or case studies.)</em></p>
+
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-800 mt-20">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center text-gray-500">
+            <p>&copy; 2024 XeyLabs. Built with Tailwind CSS. Inspired by Next.js.</p>
+            <p>Crafted with ❤️ by Xey.</p>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script> <!-- Note: Path to script.js adjusted -->
+</body>
+</html>

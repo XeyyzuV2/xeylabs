@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - XeyLabs</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-black text-gray-100 antialiased">
+
+    <!-- Header -->
+    <header class="border-b border-gray-800 sticky top-0 z-50 bg-black bg-opacity-80 backdrop-blur-md">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="text-2xl font-bold text-white hover:text-gray-300 transition-colors">XeyLabs</a>
+                </div>
+                <nav class="hidden md:flex space-x-4">
+                    <a href="index.html" class="text-gray-400 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Home</a>
+                    <a href="blog.html" class="text-purple-400 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Blog</a>
+                    <a href="changelog.html" class="text-gray-400 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Changelog</a>
+                    <a href="docs.html" class="text-gray-400 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Documentation</a>
+                </nav>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-500">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="md:hidden hidden border-t border-gray-800">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                <a href="blog.html" class="text-purple-400 bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Blog</a>
+                <a href="changelog.html" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Changelog</a>
+                <a href="docs.html" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Documentation</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area - Blog Page -->
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="mb-12 text-center">
+            <h1 class="text-5xl font-extrabold text-white mb-4">XeyLabs Blog</h1>
+            <p class="text-xl text-gray-400">Insights, tutorials, and updates from the lab.</p>
+        </div>
+
+        <!-- Blog Post Listings -->
+        <div class="space-y-12">
+            <!-- Blog Post Item 1 -->
+            <article class="bg-gray-800 shadow-xl rounded-lg overflow-hidden hover:shadow-purple-500/40 transition-shadow duration-300">
+                <div class="p-6 md:p-8">
+                    <header class="mb-4">
+                        <h2 class="text-3xl font-bold text-purple-400 hover:text-purple-300 transition-colors">
+                            <a href="blog/post-1.html">Understanding Quantum Entanglement</a>
+                        </h2>
+                        <p class="text-sm text-gray-500 mt-1">
+                            Published on <time datetime="2024-07-28">July 28, 2024</time> by Xey
+                        </p>
+                    </header>
+                    <div class="prose prose-invert max-w-none text-gray-300">
+                        <p>Quantum entanglement is a phenomenon where two or more quantum particles become linked in such a way that their fates are intertwined, regardless of the distance separating them. This post delves into the basics of entanglement, its implications, and potential applications in quantum computing and communication...</p>
+                    </div>
+                    <footer class="mt-6">
+                        <a href="blog/post-1.html" class="text-purple-400 hover:text-purple-300 font-semibold transition-colors">Read more &rarr;</a>
+                    </footer>
+                </div>
+            </article>
+
+            <!-- Blog Post Item 2 -->
+            <article class="bg-gray-800 shadow-xl rounded-lg overflow-hidden hover:shadow-purple-500/40 transition-shadow duration-300">
+                <div class="p-6 md:p-8">
+                    <header class="mb-4">
+                        <h2 class="text-3xl font-bold text-purple-400 hover:text-purple-300 transition-colors">
+                            <a href="blog/post-2.html">Building Scalable Web Applications with Microservices</a>
+                        </h2>
+                        <p class="text-sm text-gray-500 mt-1">
+                            Published on <time datetime="2024-07-15">July 15, 2024</time> by Xey
+                        </p>
+                    </header>
+                    <div class="prose prose-invert max-w-none text-gray-300">
+                        <p>Microservices architecture has become a popular approach for building complex and scalable web applications. This article explores the core principles of microservices, their advantages and disadvantages, and best practices for designing and implementing them effectively. We'll also look at some real-world examples...</p>
+                    </div>
+                    <footer class="mt-6">
+                        <a href="blog/post-2.html" class="text-purple-400 hover:text-purple-300 font-semibold transition-colors">Read more &rarr;</a>
+                    </footer>
+                </div>
+            </article>
+
+            <!-- Add more blog post items here -->
+
+        </div>
+        <!-- Future: Pagination -->
+        <!-- <nav class="mt-12 flex justify-center" aria-label="Pagination">
+            <a href="#" class="relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-700 bg-gray-800 text-sm font-medium text-gray-400 hover:bg-gray-700">
+                Previous
+            </a>
+            <a href="#" class="relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-700 bg-gray-800 text-sm font-medium text-gray-400 hover:bg-gray-700">
+                Next
+            </a>
+        </nav> -->
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-800 mt-20">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center text-gray-500">
+            <p>&copy; 2024 XeyLabs. Built with Tailwind CSS. Inspired by Next.js.</p>
+            <p>Crafted with ❤️ by Xey.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

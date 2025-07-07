@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+    /* Apply base background and text colors via Tailwind in HTML for better control */
+}
+
+/* Additional global styles or overrides can go here if necessary, */
+/* but the goal is to use Tailwind utilities as much as possible. */
+
+/* Example: Custom scrollbar (optional, for aesthetics) */
+/* This is more advanced and might not be needed for a simple site */
+/* ::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1f2937;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #4b5563;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #6b7280;
+} */
+
+/* Ensure links in the main content have a distinct style if not covered by contextual Tailwind classes */
+main a {
+    /* color: #9333ea; /* Example: purple-600 */
+    /* text-decoration: underline; */
+    /* Consider using Tailwind classes directly on <a> tags instead for consistency */
+}
+
+main a:hover {
+    /* color: #7e22ce; /* Example: purple-700 */
+}

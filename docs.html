@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation - XeyLabs</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Custom styles for documentation page if needed */
+        .docs-sidebar a.active {
+            color: #a855f7; /* purple-500 */
+            border-left-color: #a855f7; /* purple-500 */
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body class="bg-black text-gray-100 antialiased">
+
+    <!-- Header -->
+    <header class="border-b border-gray-800 sticky top-0 z-50 bg-black bg-opacity-80 backdrop-blur-md">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="text-2xl font-bold text-white hover:text-gray-300 transition-colors">XeyLabs</a>
+                </div>
+                <nav class="hidden md:flex space-x-4">
+                    <a href="index.html" class="text-gray-400 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Home</a>
+                    <a href="blog.html" class="text-gray-400 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Blog</a>
+                    <a href="changelog.html" class="text-gray-400 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Changelog</a>
+                    <a href="docs.html" class="text-purple-400 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Documentation</a>
+                </nav>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-500">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="md:hidden hidden border-t border-gray-800">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                <a href="blog.html" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Blog</a>
+                <a href="changelog.html" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Changelog</a>
+                <a href="docs.html" class="text-purple-400 bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Documentation</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area - Documentation Page -->
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="lg:flex">
+            <!-- Sidebar -->
+            <aside id="docs-sidebar" class="w-full lg:w-1/4 lg:pr-8 mb-12 lg:mb-0">
+                <div class="sticky top-24"> <!-- top-16 (header height) + py-8 (main padding) approx -->
+                    <h2 class="text-xl font-semibold text-white mb-4">Documentation</h2>
+                    <nav class="space-y-2 docs-sidebar">
+                        <div>
+                            <h3 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-1">Getting Started</h3>
+                            <a href="#introduction" class="block py-1 px-2 border-l-2 border-gray-700 text-gray-300 hover:text-purple-400 hover:border-purple-400 transition-colors">Introduction</a>
+                            <a href="#setup" class="block py-1 px-2 border-l-2 border-gray-700 text-gray-300 hover:text-purple-400 hover:border-purple-400 transition-colors">Project Setup</a>
+                        </div>
+                        <div>
+                            <h3 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mt-4 mb-1">Project Alpha</h3>
+                            <a href="#alpha-overview" class="block py-1 px-2 border-l-2 border-gray-700 text-gray-300 hover:text-purple-400 hover:border-purple-400 transition-colors">Overview</a>
+                            <a href="#alpha-api" class="block py-1 px-2 border-l-2 border-gray-700 text-gray-300 hover:text-purple-400 hover:border-purple-400 transition-colors">API Reference</a>
+                            <a href="#alpha-examples" class="block py-1 px-2 border-l-2 border-gray-700 text-gray-300 hover:text-purple-400 hover:border-purple-400 transition-colors">Examples</a>
+                        </div>
+                        <div>
+                            <h3 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mt-4 mb-1">AI Companion</h3>
+                            <a href="#ai-introduction" class="block py-1 px-2 border-l-2 border-gray-700 text-gray-300 hover:text-purple-400 hover:border-purple-400 transition-colors">Introduction</a>
+                            <a href="#ai-features" class="block py-1 px-2 border-l-2 border-gray-700 text-gray-300 hover:text-purple-400 hover:border-purple-400 transition-colors">Features</a>
+                        </div>
+                         <!-- Add more sections and links as needed -->
+                    </nav>
+                </div>
+            </aside>
+
+            <!-- Content Area -->
+            <article class="w-full lg:w-3/4 prose prose-invert max-w-none text-gray-300 lg:pl-8">
+                <section id="introduction" class="mb-16 scroll-mt-24">
+                    <h1 class="text-4xl font-extrabold text-white border-b border-gray-700 pb-4 mb-6">Introduction</h1>
+                    <p>Welcome to the XeyLabs documentation. This space provides detailed information about the various projects, experiments, and tools developed under the XeyLabs umbrella. Whether you're looking to understand a specific project, contribute, or simply learn, these documents aim to be a comprehensive resource.</p>
+                    <p>Our documentation is organized by project. Use the sidebar to navigate through different sections and topics.</p>
+                </section>
+
+                <section id="setup" class="mb-16 scroll-mt-24">
+                    <h2 class="text-3xl font-bold text-white border-b border-gray-700 pb-3 mb-6">Project Setup</h2>
+                    <p>General guidelines for setting up and running projects from XeyLabs.</p>
+                    <h3 class="text-xl font-semibold text-purple-400 mt-6 mb-3">Prerequisites</h3>
+                    <ul class="list-disc pl-5 space-y-1">
+                        <li>Git</li>
+                        <li>Node.js (version specified per project)</li>
+                        <li>A code editor (e.g., VS Code)</li>
+                    </ul>
+                    <h3 class="text-xl font-semibold text-purple-400 mt-6 mb-3">Cloning a Repository</h3>
+                    <pre><code class="language-bash">git clone https://github.com/yourusername/project-name.git
+cd project-name</code></pre>
+                    <h3 class="text-xl font-semibold text-purple-400 mt-6 mb-3">Installing Dependencies</h3>
+                    <p>Most JavaScript-based projects will use npm or yarn for package management.</p>
+                    <pre><code class="language-bash">npm install
+# or
+yarn install</code></pre>
+                    <p>Refer to individual project README files for specific setup instructions.</p>
+                </section>
+
+                <section id="alpha-overview" class="mb-16 scroll-mt-24">
+                    <h2 class="text-3xl font-bold text-white border-b border-gray-700 pb-3 mb-6">Project Alpha: Overview</h2>
+                    <p>Project Alpha is an experimental initiative focused on decentralized data storage solutions. It aims to explore novel cryptographic techniques and peer-to-peer networking protocols to create a resilient and secure data persistence layer.</p>
+                    <p>Key goals of Project Alpha:</p>
+                    <ul class="list-disc pl-5 space-y-1">
+                        <li>High data availability and durability.</li>
+                        <li>Strong end-to-end encryption.</li>
+                        <li>Resistance to censorship and single points of failure.</li>
+                        <li>Efficient data retrieval mechanisms.</li>
+                    </ul>
+                </section>
+
+                <section id="alpha-api" class="mb-16 scroll-mt-24">
+                    <h2 class="text-3xl font-bold text-white border-b border-gray-700 pb-3 mb-6">Project Alpha: API Reference</h2>
+                    <p class="italic text-gray-500">(Placeholder: Full API documentation will be available here.)</p>
+                    <p>The API for Project Alpha is currently under development. This section will provide detailed information on endpoints, request/response formats, and authentication methods once the API is stabilized.</p>
+                     <h3 class="text-xl font-semibold text-purple-400 mt-6 mb-3">Core Endpoints (Tentative)</h3>
+                    <ul class="list-disc pl-5 space-y-1">
+                        <li><code>POST /data</code>: Store new data.</li>
+                        <li><code>GET /data/{id}</code>: Retrieve data by ID.</li>
+                        <li><code>DELETE /data/{id}</code>: Delete data by ID.</li>
+                    </ul>
+                </section>
+
+                <section id="alpha-examples" class="mb-16 scroll-mt-24">
+                     <h2 class="text-3xl font-bold text-white border-b border-gray-700 pb-3 mb-6">Project Alpha: Examples</h2>
+                     <p class="italic text-gray-500">(Placeholder: Code examples will be added here.)</p>
+                     <p>This section will feature practical code examples demonstrating how to interact with Project Alpha using various programming languages.</p>
+                </section>
+
+                <section id="ai-introduction" class="mb-16 scroll-mt-24">
+                    <h2 class="text-3xl font-bold text-white border-b border-gray-700 pb-3 mb-6">AI Companion: Introduction</h2>
+                    <p>The AI Companion project is focused on developing a personalized AI assistant. This project explores advancements in natural language processing (NLP), machine learning, and user interaction design to create an intuitive and helpful AI partner.</p>
+                </section>
+
+                <section id="ai-features" class="mb-16 scroll-mt-24">
+                     <h2 class="text-3xl font-bold text-white border-b border-gray-700 pb-3 mb-6">AI Companion: Features</h2>
+                     <p class="italic text-gray-500">(Placeholder: Detailed feature list will be documented here.)</p>
+                     <ul class="list-disc pl-5 space-y-1">
+                        <li>Conversational interface.</li>
+                        <li>Task automation capabilities.</li>
+                        <li>Personalized information retrieval.</li>
+                        <li>Learning from user interactions (privacy-preserving).</li>
+                    </ul>
+                </section>
+                <!-- Add more content sections corresponding to sidebar links -->
+            </article>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-800 mt-20">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center text-gray-500">
+            <p>&copy; 2024 XeyLabs. Built with Tailwind CSS. Inspired by Next.js.</p>
+            <p>Crafted with ❤️ by Xey.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Simple script for active sidebar link and smooth scroll
+        document.addEventListener('DOMContentLoaded', () => {
+            const sidebarLinks = document.querySelectorAll('#docs-sidebar nav a');
+            const sections = document.querySelectorAll('main article section');
+
+            // Function to update active link
+            const updateActiveLink = () => {
+                let currentSectionId = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - (document.querySelector('header').offsetHeight + 30); // Adjust offset for sticky header
+                    if (window.scrollY >= sectionTop) {
+                        currentSectionId = section.id;
+                    }
+                });
+
+                sidebarLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${currentSectionId}`) {
+                        link.classList.add('active');
+                    }
+                });
+            };
+
+            // Smooth scroll for sidebar links
+            sidebarLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        const headerOffset = document.querySelector('header').offsetHeight + 24; // Sticky header height + some padding
+                        const elementPosition = targetElement.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                        // Manually update active class on click as scroll event might be delayed
+                        sidebarLinks.forEach(l => l.classList.remove('active'));
+                        this.classList.add('active');
+                    }
+                });
+            });
+
+            // Update active link on scroll
+            window.addEventListener('scroll', updateActiveLink);
+            // Initial update
+            updateActiveLink();
+        });
+    </script>
+</body>
+</html>
