@@ -24,6 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Function to apply theme
     function applyTheme(theme) {
+        console.log(`Applying theme: ${theme}`); // Diagnostic log
         if (theme === 'dark') {
             document.documentElement.classList.add('dark');
             if (themeToggleDarkIcon) themeToggleDarkIcon.classList.remove('hidden');
@@ -44,7 +45,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (themeToggleButton) {
         themeToggleButton.addEventListener('click', () => {
-            const newTheme = document.documentElement.classList.contains('dark') ? 'light' : 'dark';
+            const isCurrentlyDark = document.documentElement.classList.contains('dark');
+            const newTheme = isCurrentlyDark ? 'light' : 'dark';
+            console.log(`Theme toggle clicked. Current theme: ${isCurrentlyDark ? 'dark' : 'light'}. New theme: ${newTheme}`); // Diagnostic log
             localStorage.setItem('theme', newTheme);
             applyTheme(newTheme);
         });
